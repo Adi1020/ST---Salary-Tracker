@@ -1,0 +1,38 @@
+<!-- index.html - updated to include class="hidden" on result -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salary Tracker</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="icon-192.png" />
+</head>
+<body>
+  <main>
+    <h1>Salary Tracker</h1>
+    <label>Day of the Week:
+      <select id="day">
+        <option>Sunday</option>
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>Saturday</option>
+      </select>
+    </label>
+    <label>Start Time: <input type="time" id="start" /></label>
+    <label>End Time: <input type="time" id="end" /></label>
+    <button id="calculate">Calculate Pay</button>
+    <div id="result" class="hidden"></div>
+  </main>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>

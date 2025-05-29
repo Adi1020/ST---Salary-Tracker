@@ -1,0 +1,101 @@
+/* style.css - Enhanced for index.html with hidden result class */
+
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #0ea5e9;
+  --bg-color: #f9fafb;
+  --text-color: #1f2937;
+  --white: #ffffff;
+  --accent: #6366f1;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+main {
+  background: var(--white);
+  padding: 2rem 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+}
+
+select,
+input[type="time"] {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  background: #f1f5f9;
+  transition: border-color 0.3s;
+}
+
+select:focus,
+input[type="time"]:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
+
+button {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent);
+}
+
+#result {
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-radius: var(--radius);
+  border: 1px solid #d1fae5;
+}
+
+.hidden {
+  display: none;
+}
