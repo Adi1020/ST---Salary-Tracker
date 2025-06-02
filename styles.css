@@ -1,13 +1,25 @@
-/* style.css - Enhanced for index.html with hidden result class */
-
 :root {
-  --primary-color: #3b82f6;
-  --secondary-color: #0ea5e9;
-  --bg-color: #f9fafb;
-  --text-color: #1f2937;
-  --white: #ffffff;
+  --bg: #f9fafb;
+  --text: #1f2937;
+  --card: #ffffff;
+  --button: #3b82f6;
+  --button-text: #ffffff;
   --accent: #6366f1;
-  --radius: 10px;
+  --success-bg: #ecfdf5;
+  --success-text: #065f46;
+  --success-border: #d1fae5;
+}
+
+html.dark {
+  --bg: #121212;
+  --text: #e0e0e0;
+  --card: #1e1e1e;
+  --button: #2c2c2c;
+  --button-text: #fff;
+  --accent: #444;
+  --success-bg: #1a3f2f;
+  --success-text: #ccffcc;
+  --success-border: #2e7d4d;
 }
 
 * {
@@ -17,66 +29,57 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   min-height: 100vh;
   padding: 2rem;
 }
 
 main {
-  background: var(--white);
-  padding: 2rem 2.5rem;
-  border-radius: var(--radius);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  background-color: var(--card);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px;
-  text-align: center;
 }
 
 h1 {
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text);
 }
 
 label {
   display: block;
-  text-align: left;
-  font-weight: 600;
-  margin-top: 1.25rem;
-  font-size: 0.95rem;
+  margin-top: 1rem;
+  font-weight: bold;
 }
 
 select,
 input[type="time"] {
   width: 100%;
-  padding: 0.6rem;
-  margin-top: 0.4rem;
-  font-size: 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: var(--radius);
-  background: #f1f5f9;
-  transition: border-color 0.3s;
-}
-
-select:focus,
-input[type="time"]:focus {
-  border-color: var(--secondary-color);
-  outline: none;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--card);
+  color: var(--text);
 }
 
 button {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   width: 100%;
   padding: 0.75rem;
-  background-color: var(--primary-color);
-  color: var(--white);
+  background-color: var(--button);
+  color: var(--button-text);
   font-size: 1rem;
   border: none;
-  border-radius: var(--radius);
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -86,16 +89,27 @@ button:hover {
 }
 
 #result {
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 1rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-  background-color: #ecfdf5;
-  color: #065f46;
-  border-radius: var(--radius);
-  border: 1px solid #d1fae5;
+  font-size: 1.2rem;
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid var(--success-border);
+  border-radius: 8px;
 }
 
 .hidden {
   display: none;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+#back-button {
+  margin-top: 1rem;
 }

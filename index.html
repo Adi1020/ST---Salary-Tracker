@@ -1,38 +1,66 @@
-<!-- index.html - updated to include class="hidden" on result -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salary Tracker</title>
-  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#121212" id="theme-color-meta" />
+  <title>Shift Salary Calculator</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="icon-192.png" />
 </head>
 <body>
-  <main>
-    <h1>Salary Tracker</h1>
-    <label>Day of the Week:
-      <select id="day">
-        <option>Sunday</option>
-        <option>Monday</option>
-        <option>Tuesday</option>
-        <option>Wednesday</option>
-        <option>Thursday</option>
-        <option>Friday</option>
-        <option>Saturday</option>
-      </select>
+  <header>
+    <h1>Shift Salary Calculator</h1>
+    <label class="theme-toggle">
+      <input type="checkbox" id="darkToggle" /> 🌙 Dark Mode
     </label>
-    <label>Start Time: <input type="time" id="start" /></label>
-    <label>End Time: <input type="time" id="end" /></label>
-    <button id="calculate">Calculate Pay</button>
+  </header>
+
+  <main>
+    <label for="day">Day of the Week:</label>
+    <select id="day">
+      <option value="">-- Select a Day --</option>
+      <option value="Sunday">Sunday</option>
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+    </select>
+
+    <label for="shift">Choose Shift:</label>
+    <select id="shift">
+      <option value="">-- Select a Shift --</option>
+      <option value="morning">Morning (07:00 - 15:00)</option>
+      <option value="evening">Evening (15:00 - 23:00)</option>
+      <option value="night">Night (23:00 - 07:00)</option>
+      <option value="custom">Custom Time</option>
+    </select>
+
+    <label for="start">Start Time:</label>
+    <input type="time" id="start" required />
+
+    <label for="end">End Time:</label>
+    <input type="time" id="end" required />
+
+    <button id="calculate">Calculate Salary</button>
+
     <div id="result" class="hidden"></div>
+
+    <div id="back-button" class="hidden">
+      <button onclick="RefreshPage()">🔄 Refresh Page</button>
+    </div>
   </main>
-  <script src="app.js"></script>
+
+  <footer>
+    <p>© 🃏 POCO_dev</p>
+  </footer>
+
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
+    function RefreshPage() {
+      location.reload();
     }
   </script>
+  <script src="app.js"></script>
 </body>
 </html>
